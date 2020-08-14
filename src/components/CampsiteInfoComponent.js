@@ -46,9 +46,11 @@ class CampsiteInfo extends Component {
         // check if an object with the name "campsite" (passed in via props) can be evaluated as truthy
         if (this.props.campsite) { // campsite is truthy
           return (
-            <div className="row">
-              {this.renderCampsite(this.props.campsite)}
-              {this.renderComments(this.props.campsite.comments)}
+            <div className="container">
+              <div className="row">
+                {this.renderCampsite(this.props.campsite)}
+                {this.renderComments(this.props.campsite.comments)}
+              </div>
             </div>
           );
         }

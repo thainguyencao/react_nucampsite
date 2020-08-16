@@ -5,8 +5,8 @@ Date: 08-09-2020
 */
 import React, { Component } from "react";
 import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
-class CampsiteInfo extends Component {
-    renderCampsite(campsite) {
+
+function RenderCampsite({campsite}) {
       return (
         <div className="col-md-5 m-1">
           <Card>
@@ -18,11 +18,12 @@ class CampsiteInfo extends Component {
           </Card>
         </div>
       );
-    }
-    renderComments(comments) {
-        if (comments) {
-          return (
-            <div className="col-md-5 m-1">
+}
+
+function RenderComments({comments}) {
+  if (comments) {
+    return (
+      <div className="col-md-5 m-1">
               <h4>Comments</h4>
               {comments.map((comment) => (
                 <div key={comment.id}>
@@ -37,24 +38,24 @@ class CampsiteInfo extends Component {
                   </p>
                 </div>
               ))}
-            </div>
+      </div>
           );
         }
         return <div />;
-      }
-    render() {
+}
+
+function CampsiteInfo(props) {
         // check if an object with the name "campsite" (passed in via props) can be evaluated as truthy
-        if (this.props.campsite) { // campsite is truthy
+        if (props.campsite) { // campsite is truthy
           return (
             <div className="container">
               <div className="row">
-                {this.renderCampsite(this.props.campsite)}
-                {this.renderComments(this.props.campsite.comments)}
+                <RenderCampsite campsite={props.campsite} />
+                <RenderComments comments={props.campsite.comments} />
               </div>
             </div>
           );
         }
         return <div />; // campsite not truthy --> display nothing
-      }
-    }
-    export default CampsiteInfo;
+}
+export default CampsiteInfo;

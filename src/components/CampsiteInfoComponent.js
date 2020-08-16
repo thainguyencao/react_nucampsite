@@ -3,7 +3,7 @@ Thai Nguyen
 React-3
 Date: 08-09-2020
 */
-import React, { Component } from "react";
+import React from "react";
 import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
 
 function RenderCampsite({campsite}) {
@@ -51,7 +51,7 @@ function CampsiteInfo(props) {
       <div className="container">
         <div className="row">
           <RenderCampsite campsite={props.campsite} />
-          <RenderComments comments={props.campsite.comments} />
+          <RenderComments comments={props.comments} />
         </div>
       </div>
     );

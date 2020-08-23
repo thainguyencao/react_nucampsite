@@ -263,7 +263,8 @@ class Contact extends Component {
                                     </Button>
                                 </Col>
                             </Row>
-                        </LocalForm>                    </div>
+                        </LocalForm>                    
+                        </div>
                 </div>
             </div>
         );
